@@ -181,6 +181,21 @@ namespace Hada
 
             return true;
         }
+
+        private void cuandoAmonestacionesMaximoExcedido()
+        {
+
+        }
+
+        private void cuandoFaltasMaximoExcedido()
+        {
+
+        }
+
+        private void cuandoEnergiaMinimaExcedida()
+        {
+
+        }
         #endregion
     }
 }
