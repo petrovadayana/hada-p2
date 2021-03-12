@@ -39,6 +39,19 @@ namespace Hada
             }
         }
 
+        public int Amonestaciones
+        {
+            get
+            {
+                return amonestaciones;
+            }
+
+            set
+            {
+                amonestaciones = value;
+            }
+        }
+
         private int faltas
         {
             get
@@ -54,6 +67,19 @@ namespace Hada
                     return;
                 }
 
+                faltas = value;
+            }
+        }
+
+        public int Faltas
+        {
+            get
+            {
+                return faltas;
+            }
+
+            set
+            {
                 faltas = value;
             }
         }
@@ -88,10 +114,23 @@ namespace Hada
                 energia = value;
             }
         }
+
+        public int Energia
+        {
+            get
+            {
+                return energia;
+            }
+
+            set
+            {
+                energia = value;
+            }
+        }
         #endregion
 
         #region Constructor
-        Jugador(string nombre, int amonestaciones, int faltas, int energia, int puntos)
+        public Jugador(string nombre, int amonestaciones, int faltas, int energia, int puntos)
         {
             this.name = nombre;
             this.amonestaciones = amonestaciones;
@@ -99,30 +138,34 @@ namespace Hada
             this.energia = energia;
             this.puntos = puntos;
         }
+
+        public Jugador()
+        {
+        }
         #endregion
 
         #region Funciones
-        void incAmonestaciones()
+        public void incAmonestaciones()
         {
             this.amonestaciones += rand.Next(0, 2 + 1);
         }
 
-        void incFaltas()
+        public void incFaltas()
         {
             this.faltas += rand.Next(0, 3 + 1);
         }
 
-        void decEnergia()
+        public void decEnergia()
         {
             this.energia -= rand.Next(1, 7 + 1);
         }
 
-        void incPuntos()
+        public void incPuntos()
         {
             this.puntos += rand.Next(0, 3 + 1);
         }
 
-        bool todoOk()
+        public bool todoOk()
         {
             if(amonestaciones > maxAmonestaciones)
             {
@@ -142,7 +185,7 @@ namespace Hada
             return true;
         }
 
-        void mover()
+        public void mover()
         {
             if (todoOk())
             {
